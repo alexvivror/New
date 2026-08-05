@@ -1,12 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sample Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USATools — Free Online Calculators, Converters & Generators</title>
+  <meta name="description" content="Free online tools: BMI calculator, percentage calculator, tip calculator, mortgage calculator, unit converter, password generator, word counter and more. Fast, private, works offline.">
+  <meta name="keywords" content="free tools, calculator, bmi calculator, percentage calculator, tip calculator, mortgage calculator, unit converter, password generator, word counter">
+  <meta property="og:title" content="USATools — Free Online Tools">
+  <meta property="og:description" content="Fast, private, ad-supported free tools for everyday needs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a simple HTML page with CSS.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">⚡ <span>USATools</span></a>
+      <nav>
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Free Online Tools.<br>Fast. Private. No Sign-up.</h1>
+        <p class="sub">Calculators, converters & generators used by millions — built to run 100% in your browser. Nothing is uploaded. Ever.</p>
+        <div class="hero-stats">
+          <div class="stat"><b>24M+</b><span>calculator searches/mo</span></div>
+          <div class="stat"><b>60%+</b><span>mobile users</span></div>
+          <div class="stat"><b>0</b><span>data collected</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AD SLOT (AdSense-ready) -->
+    <div class="container">
+      <div class="ad-slot" id="ad-top" aria-label="Advertisement">Advertisement</div>
+    </div>
+
+    <!-- TOOL GRID -->
+    <section class="tools" id="tools">
+      <div class="container">
+        <h2 class="section-title">Popular Tools</h2>
+        <div class="grid">
+          <button class="tool-card" data-tool="bmi"><span class="ico">⚖️</span><h3>BMI Calculator</h3><p>Body Mass Index in seconds</p></button>
+          <button class="tool-card" data-tool="percentage"><span class="ico">％</span><h3>Percentage Calculator</h3><p>% of, % change, % off</p></button>
+          <button class="tool-card" data-tool="tip"><span class="ico">💵</span><h3>Tip Calculator</h3><p>Split bills & tips fairly</p></button>
+          <button class="tool-card" data-tool="discount"><span class="ico">🏷️</span><h3>Discount Calculator</h3><p>Sale price & savings</p></button>
+          <button class="tool-card" data-tool="age"><span class="ico">🎂</span><h3>Age Calculator</h3><p>Exact age in days & hours</p></button>
+          <button class="tool-card" data-tool="mortgage"><span class="ico">🏠</span><h3>Mortgage Calculator</h3><p>Monthly payment estimator</p></button>
+          <button class="tool-card" data-tool="unit"><span class="ico">📏</span><h3>Unit Converter</h3><p>Length, weight, volume, temp</p></button>
+          <button class="tool-card" data-tool="temp"><span class="ico">🌡️</span><h3>Temperature Converter</h3><p>°F ↔ °C ↔ K</p></button>
+          <button class="tool-card" data-tool="password"><span class="ico">🔐</span><h3>Password Generator</h3><p>Strong random passwords</p></button>
+          <button class="tool-card" data-tool="words"><span class="ico">📝</span><h3>Word Counter</h3><p>Words, chars, sentences</p></button>
+          <button class="tool-card" data-tool="loan"><span class="ico">💰</span><h3>Loan Calculator</h3><p>Amortization & interest</p></button>
+          <button class="tool-card" data-tool="calorie"><span class="ico">🔥</span><h3>Calorie Needs</h3><p>Daily calories estimate</p></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AD SLOT -->
+    <div class="container">
+      <div class="ad-slot" id="ad-mid" aria-label="Advertisement">Advertisement</div>
+    </div>
+
+    <!-- ABOUT / SEO -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">Why USATools?</h2>
+        <div class="about-cols">
+          <div>
+            <h3>100% Private</h3>
+            <p>Every tool runs entirely in your browser with JavaScript. Your numbers never leave your device — no servers, no tracking, no accounts.</p>
+          </div>
+          <div>
+            <h3>Built for Mobile</h3>
+            <p>Over 60% of searches in the US happen on phones. Every tool here is mobile-first and loads in under a second.</p>
+          </div>
+          <div>
+            <h3>Works Offline</h3>
+            <p>Once loaded, all tools work with zero internet. Perfect for slow connections and private browsing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TOOL MODAL -->
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>USATools © <span id="year"></span> — Free online tools for everyone.</p>
+      <p class="tiny">All calculations are estimates and provided for informational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
