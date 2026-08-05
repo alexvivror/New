@@ -4,48 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToolHub — Free Online Calculators & Converters</title>
-  <meta name="description" content="Free online tools: BMI calculator, percentage calculator, tip calculator, discount calculator, mortgage calculator, unit converter, password generator and more. Private, fast, no sign-up.">
-  <meta name="keywords" content="free tools, calculator, bmi calculator, percentage calculator, tip calculator, mortgage calculator, unit converter, password generator">
-  <meta property="og:title" content="ToolHub — Free Online Tools">
-  <meta property="og:description" content="Fast, private, free online calculators and converters.">
+  <meta name="description" content="Free online calculators and converters: BMI, percentage, tip, discount, age, mortgage, unit, temperature, password, word counter, loan, and calorie. Private, instant, no sign-up.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alexvivror.github.io/New/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ToolHub","url":"https://alexvivror.github.io/New","description":"Free online calculators and converters: BMI, percentage, tip, mortgage, unit, temperature, password, word counter, loan, calorie and more."}</script>
 </head>
 <body>
-
   <header class="header">
     <div class="container header-inner">
-      <a href="#" class="brand">
+      <a href="./" class="brand">
         <span class="material-symbols-outlined">widgets</span>
         <span>ToolHub</span>
       </a>
       <nav class="nav">
-        <a href="#tools">Tools</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="./">Tools</a>
+        <a href="./#about">About</a>
       </nav>
     </div>
   </header>
-
+  
   <main>
     <section class="hero">
       <div class="container">
         <p class="hero-tag">100% Free · No Sign-up · Private</p>
-        <h1>Everyday tools,<br><span>right in your browser.</span></h1>
-        <p class="hero-sub">Calculators, converters and generators that work instantly — your data never leaves your device.</p>
+        <h1>Free online calculators &amp; converters, <span>right in your browser.</span></h1>
+        <p class="hero-sub">Fast, private tools that work instantly on any device. Your data never leaves your browser.</p>
       </div>
     </section>
-
     <section class="tools" id="tools">
       <div class="container">
         <h2 class="section-title">All Tools</h2>
-        <div class="grid" id="tool-grid"></div>
+        <div class="grid"><a class="tool-card" href="bmi-calculator.html">
+    <span class="icon material-symbols-outlined">monitor_weight</span>
+    <h3>BMI Calculator</h3>
+    <p>Body Mass Index</p>
+  </a>
+<a class="tool-card" href="percentage-calculator.html">
+    <span class="icon material-symbols-outlined">percent</span>
+    <h3>Percentage Calculator</h3>
+    <p>X% of Y</p>
+  </a>
+<a class="tool-card" href="tip-calculator.html">
+    <span class="icon material-symbols-outlined">payments</span>
+    <h3>Tip Calculator</h3>
+    <p>Tips &amp; bill splitting</p>
+  </a>
+<a class="tool-card" href="discount-calculator.html">
+    <span class="icon material-symbols-outlined">sell</span>
+    <h3>Discount Calculator</h3>
+    <p>Sale price &amp; savings</p>
+  </a>
+<a class="tool-card" href="age-calculator.html">
+    <span class="icon material-symbols-outlined">cake</span>
+    <h3>Age Calculator</h3>
+    <p>Exact age in days</p>
+  </a>
+<a class="tool-card" href="mortgage-calculator.html">
+    <span class="icon material-symbols-outlined">home</span>
+    <h3>Mortgage Calculator</h3>
+    <p>Monthly payment</p>
+  </a>
+<a class="tool-card" href="unit-converter.html">
+    <span class="icon material-symbols-outlined">straighten</span>
+    <h3>Unit Converter</h3>
+    <p>Length &amp; weight</p>
+  </a>
+<a class="tool-card" href="temperature-converter.html">
+    <span class="icon material-symbols-outlined">device_thermostat</span>
+    <h3>Temperature Converter</h3>
+    <p>F, C, Kelvin</p>
+  </a>
+<a class="tool-card" href="password-generator.html">
+    <span class="icon material-symbols-outlined">lock</span>
+    <h3>Password Generator</h3>
+    <p>Strong random passwords</p>
+  </a>
+<a class="tool-card" href="word-counter.html">
+    <span class="icon material-symbols-outlined">notes</span>
+    <h3>Word Counter</h3>
+    <p>Words &amp; characters</p>
+  </a>
+<a class="tool-card" href="loan-calculator.html">
+    <span class="icon material-symbols-outlined">account_balance</span>
+    <h3>Loan Calculator</h3>
+    <p>EMI &amp; interest</p>
+  </a>
+<a class="tool-card" href="calorie-calculator.html">
+    <span class="icon material-symbols-outlined">local_fire_department</span>
+    <h3>Calorie Calculator</h3>
+    <p>Daily needs</p>
+  </a></div>
       </div>
     </section>
-
     <section class="about" id="about">
       <div class="container">
         <h2 class="section-title">Why ToolHub?</h2>
@@ -69,21 +124,12 @@
       </div>
     </section>
   </main>
-
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <div class="container">
       <p>ToolHub © <span id="year"></span> · Free tools for everyone</p>
       <p class="fine">All results are estimates for informational purposes only.</p>
     </div>
   </footer>
-
-  <div class="modal-overlay" id="modal" hidden>
-    <div class="modal">
-      <button class="modal-close" id="modal-close" aria-label="Close">&#10005;</button>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
-  <script src="script.js?v=20260805"></script>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>

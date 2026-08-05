@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter — Free Online Tool</title>
+  <meta name="description" content="Free word counter: count words, characters, and sentences in any text instantly. Perfect for essays, tweets, and SEO writing. Private — text never leaves your device.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alexvivror.github.io/New/word-counter.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Word Counter","url":"https://alexvivror.github.io/New/word-counter.html","applicationCategory":"UtilityApplication","operatingSystem":"Any","description":"Free word counter: count words, characters, and sentences in any text instantly. Perfect for essays, tweets, and SEO writing. Private — text never leaves your device.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you count words?","acceptedAnswer":{"@type":"Answer","text":"Words are counted by splitting the text on whitespace. Each group of characters separated by spaces counts as one word."}},{"@type":"Question","name":"Does the counter include punctuation?","acceptedAnswer":{"@type":"Answer","text":"Punctuation is counted as characters but not as words. Sentences are detected by terminal punctuation like . ! and ?"}},{"@type":"Question","name":"Is my text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The counter runs completely in your browser. Your text is never transmitted or stored."}}]}]</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="./" class="brand">
+        <span class="material-symbols-outlined">widgets</span>
+        <span>ToolHub</span>
+      </a>
+      <nav class="nav">
+        <a href="./">Tools</a>
+        <a href="./#about">About</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="tool-page">
+      <div class="container">
+        <nav class="crumbs"><a href="./">All tools</a> <span>›</span> Word Counter</nav>
+        <h1 class="tool-h1"><span class="material-symbols-outlined">notes</span>Word Counter</h1>
+        <div class="tool-layout">
+          <div class="card calculator-card">
+            
+      <div class="field"><label for="wrd-t">Text</label>
+        <textarea id="wrd-t" rows="6" oninput="runWords()" placeholder="Type or paste text..."></textarea></div>
+      <div class="result" id="wrd-r" hidden></div>
+          </div>
+          <div class="card content-card">
+            <h2>Count words in real time</h2><p>Type or paste any text and watch the word count, character count, and sentence count update instantly. Ideal for essays with word limits, social media posts, and content writing.</p>
+<h2>Private by design</h2><p>Unlike online word counters that upload your text to a server, this tool runs entirely in your browser. Your writing — whether a novel chapter or a work email — never leaves your device.</p>
+          </div>
+        </div>
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          
+    <div class="faq-item">
+      <h3>How do you count words?</h3>
+      <p>Words are counted by splitting the text on whitespace. Each group of characters separated by spaces counts as one word.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does the counter include punctuation?</h3>
+      <p>Punctuation is counted as characters but not as words. Sentences are detected by terminal punctuation like . ! and ?</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is my text uploaded anywhere?</h3>
+      <p>No. The counter runs completely in your browser. Your text is never transmitted or stored.</p>
+    </div>
+        </section>
+        <section class="related">
+          <h2>Related Tools</h2>
+          <div class="chips"><a class="chip" href="password-generator.html"><span class="material-symbols-outlined">lock</span>Password Generator</a>
+<a class="chip" href="percentage-calculator.html"><span class="material-symbols-outlined">percent</span>Percentage Calculator</a><a class="chip" href="./"><span class="material-symbols-outlined">grid_view</span>All tools</a></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script>
+      function runWords(){
+        const t=document.getElementById('wrd-t').value;
+        const words=t.trim()?t.trim().split(/\s+/).length:0;
+        const sents=t.split(/[.!?]+/).filter(s=>s.trim()).length;
+        const el=document.getElementById('wrd-r');el.hidden=false;
+        el.innerHTML='<span class="big">'+words+' words</span><span class="meta">'+t.length+' characters · '+sents+' sentences</span>';
+      }</script>
+  <footer class="footer">
+    <div class="container">
+      <p>ToolHub © <span id="year"></span> · Free tools for everyone</p>
+      <p class="fine">All results are estimates for informational purposes only.</p>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

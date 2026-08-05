@@ -1,11 +1,10 @@
-# Render.com Blueprint — USATools
-# Deploy: connect repo to Render, it auto-detects this file
+# Render.com Blueprint — ToolHub
 services:
   - type: web
-    name: usatools
+    name: toolhub
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: node build.js && npm install
     startCommand: npm start
     healthCheckPath: /
     envVars:

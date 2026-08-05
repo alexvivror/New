@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator — Free Online Calculator</title>
+  <meta name="description" content="Free BMI calculator: enter height and weight to get your Body Mass Index instantly, with healthy range guidance. Private, works offline, no sign-up.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alexvivror.github.io/New/bmi-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"BMI Calculator","url":"https://alexvivror.github.io/New/bmi-calculator.html","applicationCategory":"UtilityApplication","operatingSystem":"Any","description":"Free BMI calculator: enter height and weight to get your Body Mass Index instantly, with healthy range guidance. Private, works offline, no sign-up.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a healthy BMI?","acceptedAnswer":{"@type":"Answer","text":"A BMI between 18.5 and 24.9 is considered a healthy weight range for most adults. Below 18.5 is underweight, 25–29.9 is overweight, and 30+ is obese."}},{"@type":"Question","name":"Is BMI accurate for everyone?","acceptedAnswer":{"@type":"Answer","text":"BMI is a useful screening tool but does not distinguish muscle from fat. Athletes may show a high BMI despite low body fat, and older adults may have a normal BMI with low muscle mass."}},{"@type":"Question","name":"How can I lower my BMI?","acceptedAnswer":{"@type":"Answer","text":"Sustainable changes include a balanced diet with fewer processed foods, regular physical activity, and adequate sleep. Always consult a healthcare provider before major changes."}}]}]</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="./" class="brand">
+        <span class="material-symbols-outlined">widgets</span>
+        <span>ToolHub</span>
+      </a>
+      <nav class="nav">
+        <a href="./">Tools</a>
+        <a href="./#about">About</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="tool-page">
+      <div class="container">
+        <nav class="crumbs"><a href="./">All tools</a> <span>›</span> BMI Calculator</nav>
+        <h1 class="tool-h1"><span class="material-symbols-outlined">monitor_weight</span>BMI Calculator</h1>
+        <div class="tool-layout">
+          <div class="card calculator-card">
+            
+      <div class="field"><label for="bmi-h">Height (cm)</label><input type="number" id="bmi-h" placeholder="e.g. 175"></div>
+      <div class="field"><label for="bmi-w">Weight (kg)</label><input type="number" id="bmi-w" placeholder="e.g. 70"></div>
+      <button class="btn" onclick="runBMI()">Calculate BMI</button>
+      <div class="result" id="bmi-r" hidden></div>
+          </div>
+          <div class="card content-card">
+            <h2>What is BMI?</h2><p>Body Mass Index (BMI) is a simple measure that uses your height and weight to estimate whether you are underweight, at a healthy weight, overweight, or obese. It is the most widely used screening tool for body fat categories and is recommended by the WHO and the CDC.</p>
+<h2>How BMI is calculated</h2><p>BMI is calculated by dividing your weight in kilograms by the square of your height in meters (kg/m²). For most adults, a BMI between 18.5 and 24.9 is considered a healthy range. Keep in mind BMI does not measure body fat directly and may not be accurate for athletes or older adults.</p>
+          </div>
+        </div>
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          
+    <div class="faq-item">
+      <h3>What is a healthy BMI?</h3>
+      <p>A BMI between 18.5 and 24.9 is considered a healthy weight range for most adults. Below 18.5 is underweight, 25–29.9 is overweight, and 30+ is obese.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is BMI accurate for everyone?</h3>
+      <p>BMI is a useful screening tool but does not distinguish muscle from fat. Athletes may show a high BMI despite low body fat, and older adults may have a normal BMI with low muscle mass.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How can I lower my BMI?</h3>
+      <p>Sustainable changes include a balanced diet with fewer processed foods, regular physical activity, and adequate sleep. Always consult a healthcare provider before major changes.</p>
+    </div>
+        </section>
+        <section class="related">
+          <h2>Related Tools</h2>
+          <div class="chips"><a class="chip" href="calorie-calculator.html"><span class="material-symbols-outlined">local_fire_department</span>Calorie Calculator</a>
+<a class="chip" href="percentage-calculator.html"><span class="material-symbols-outlined">percent</span>Percentage Calculator</a><a class="chip" href="./"><span class="material-symbols-outlined">grid_view</span>All tools</a></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script>
+      function runBMI(){
+        const h=parseFloat(document.getElementById('bmi-h').value)/100;
+        const w=parseFloat(document.getElementById('bmi-w').value);
+        if(!h||!w)return;
+        const bmi=w/(h*h);
+        const cat=bmi<18.5?"Underweight":bmi<25?"Normal weight":bmi<30?"Overweight":"Obese";
+        const el=document.getElementById('bmi-r');el.hidden=false;
+        el.innerHTML='<span class="big">'+bmi.toFixed(1)+'</span><span class="meta">'+cat+' · healthy range 18.5–24.9</span>';
+      }</script>
+  <footer class="footer">
+    <div class="container">
+      <p>ToolHub © <span id="year"></span> · Free tools for everyone</p>
+      <p class="fine">All results are estimates for informational purposes only.</p>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

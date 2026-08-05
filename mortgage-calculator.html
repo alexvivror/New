@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator — Free Online Calculator</title>
+  <meta name="description" content="Free mortgage calculator: estimate your monthly mortgage payment with down payment, interest rate, and loan term. See total interest over the life of the loan.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alexvivror.github.io/New/mortgage-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Calculator","url":"https://alexvivror.github.io/New/mortgage-calculator.html","applicationCategory":"UtilityApplication","operatingSystem":"Any","description":"Free mortgage calculator: estimate your monthly mortgage payment with down payment, interest rate, and loan term. See total interest over the life of the loan.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is a mortgage payment calculated?","acceptedAnswer":{"@type":"Answer","text":"Payments use the formula M = P[r(1+r)ⁿ]/[(1+r)ⁿ−1], where P is principal, r is the monthly interest rate, and n is the number of payments."}},{"@type":"Question","name":"Should I choose a 15-year or 30-year mortgage?","acceptedAnswer":{"@type":"Answer","text":"A 15-year mortgage has higher monthly payments but far less total interest. A 30-year mortgage has lower payments but you pay significantly more interest over time."}},{"@type":"Question","name":"What does the payment include?","acceptedAnswer":{"@type":"Answer","text":"This calculator estimates principal and interest only. Your actual payment also includes property taxes, homeowners insurance, and possibly PMI."}}]}]</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="./" class="brand">
+        <span class="material-symbols-outlined">widgets</span>
+        <span>ToolHub</span>
+      </a>
+      <nav class="nav">
+        <a href="./">Tools</a>
+        <a href="./#about">About</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="tool-page">
+      <div class="container">
+        <nav class="crumbs"><a href="./">All tools</a> <span>›</span> Mortgage Calculator</nav>
+        <h1 class="tool-h1"><span class="material-symbols-outlined">home</span>Mortgage Calculator</h1>
+        <div class="tool-layout">
+          <div class="card calculator-card">
+            
+      <div class="field"><label for="mor-p">Home price ($)</label><input type="number" id="mor-p" placeholder="e.g. 400000"></div>
+      <div class="field"><label for="mor-d">Down payment (%)</label><input type="number" id="mor-d" value="20"></div>
+      <div class="field"><label for="mor-rate">Rate (% APR)</label><input type="number" id="mor-rate" value="6.5" step="0.1"></div>
+      <div class="field"><label for="mor-t">Term (years)</label><input type="number" id="mor-t" value="30"></div>
+      <button class="btn" onclick="runMortgage()">Calculate Payment</button>
+      <div class="result" id="mor-out" hidden></div>
+      <p class="hint">Principal & interest only</p>
+          </div>
+          <div class="card content-card">
+            <h2>Estimate your monthly payment</h2><p>Enter the home price, down payment, interest rate, and loan term to get an instant estimate of your monthly principal and interest payment. This is the first step in understanding what you can afford.</p>
+<h2>Understanding total interest</h2><p>Over a 30-year mortgage, you may pay nearly as much in interest as the home itself. This calculator shows your total interest so you can compare loan terms and decide between a 15-year and 30-year mortgage.</p>
+          </div>
+        </div>
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          
+    <div class="faq-item">
+      <h3>How is a mortgage payment calculated?</h3>
+      <p>Payments use the formula M = P[r(1+r)ⁿ]/[(1+r)ⁿ−1], where P is principal, r is the monthly interest rate, and n is the number of payments.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Should I choose a 15-year or 30-year mortgage?</h3>
+      <p>A 15-year mortgage has higher monthly payments but far less total interest. A 30-year mortgage has lower payments but you pay significantly more interest over time.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What does the payment include?</h3>
+      <p>This calculator estimates principal and interest only. Your actual payment also includes property taxes, homeowners insurance, and possibly PMI.</p>
+    </div>
+        </section>
+        <section class="related">
+          <h2>Related Tools</h2>
+          <div class="chips"><a class="chip" href="loan-calculator.html"><span class="material-symbols-outlined">account_balance</span>Loan Calculator</a>
+<a class="chip" href="percentage-calculator.html"><span class="material-symbols-outlined">percent</span>Percentage Calculator</a><a class="chip" href="./"><span class="material-symbols-outlined">grid_view</span>All tools</a></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script>
+      function runMortgage(){
+        const p=parseFloat(document.getElementById('mor-p').value);
+        const dp=parseFloat(document.getElementById('mor-d').value);
+        const r=parseFloat(document.getElementById('mor-rate').value);
+        const t=parseFloat(document.getElementById('mor-t').value);
+        if(isNaN(p)||isNaN(r)||isNaN(t))return;
+        const principal=p*(1-(isNaN(dp)?0:dp)/100);
+        const mRate=r/100/12;const n=t*12;
+        const pay=mRate===0?principal/n:(principal*mRate)/(1-Math.pow(1+mRate,-n));
+        const el=document.getElementById('mor-out');el.hidden=false;
+        el.innerHTML='<span class="big">$'+pay.toFixed(2)+'/mo</span><span class="meta">Loan $'+principal.toLocaleString('en-US',{maximumFractionDigits:0})+' · interest $'+(pay*n-principal).toLocaleString('en-US',{maximumFractionDigits:0})+'</span>';
+      }</script>
+  <footer class="footer">
+    <div class="container">
+      <p>ToolHub © <span id="year"></span> · Free tools for everyone</p>
+      <p class="fine">All results are estimates for informational purposes only.</p>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

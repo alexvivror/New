@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator — Free Online Calculator</title>
+  <meta name="description" content="Free age calculator: find your exact age in years, months, days, and hours from any date of birth. Instant, private, works offline.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alexvivror.github.io/New/age-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","url":"https://alexvivror.github.io/New/age-calculator.html","applicationCategory":"UtilityApplication","operatingSystem":"Any","description":"Free age calculator: find your exact age in years, months, days, and hours from any date of birth. Instant, private, works offline.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my exact age?","acceptedAnswer":{"@type":"Answer","text":"Subtract your birth date from today's date, accounting for months and days. The result is your age in years plus the exact days and hours lived."}},{"@type":"Question","name":"How many days old am I?","acceptedAnswer":{"@type":"Answer","text":"Multiply the number of full years by 365.25 (accounting for leap years) and add the days since your last birthday."}},{"@type":"Question","name":"Is age calculated in days or years?","acceptedAnswer":{"@type":"Answer","text":"Both. The calculator shows completed years, total days, and total hours so you can use whichever you need."}}]}]</script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="./" class="brand">
+        <span class="material-symbols-outlined">widgets</span>
+        <span>ToolHub</span>
+      </a>
+      <nav class="nav">
+        <a href="./">Tools</a>
+        <a href="./#about">About</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="tool-page">
+      <div class="container">
+        <nav class="crumbs"><a href="./">All tools</a> <span>›</span> Age Calculator</nav>
+        <h1 class="tool-h1"><span class="material-symbols-outlined">cake</span>Age Calculator</h1>
+        <div class="tool-layout">
+          <div class="card calculator-card">
+            
+      <div class="field"><label for="age-d">Date of birth</label><input type="date" id="age-d"></div>
+      <button class="btn" onclick="runAge()">Calculate Age</button>
+      <div class="result" id="age-r" hidden></div>
+          </div>
+          <div class="card content-card">
+            <h2>Find your exact age</h2><p>Enter your date of birth and instantly see your exact age in years, plus the precise number of days and hours you have been alive. Perfect for birthdays, milestones, and documents.</p>
+<h2>Why exact age matters</h2><p>Age in completed years is used for school enrollment, retirement planning, legal documents, and medical calculations. Our calculator gives you the precise figure in seconds.</p>
+          </div>
+        </div>
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          
+    <div class="faq-item">
+      <h3>How do I calculate my exact age?</h3>
+      <p>Subtract your birth date from today's date, accounting for months and days. The result is your age in years plus the exact days and hours lived.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How many days old am I?</h3>
+      <p>Multiply the number of full years by 365.25 (accounting for leap years) and add the days since your last birthday.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is age calculated in days or years?</h3>
+      <p>Both. The calculator shows completed years, total days, and total hours so you can use whichever you need.</p>
+    </div>
+        </section>
+        <section class="related">
+          <h2>Related Tools</h2>
+          <div class="chips"><a class="chip" href="bmi-calculator.html"><span class="material-symbols-outlined">monitor_weight</span>BMI Calculator</a>
+<a class="chip" href="calorie-calculator.html"><span class="material-symbols-outlined">local_fire_department</span>Calorie Calculator</a><a class="chip" href="./"><span class="material-symbols-outlined">grid_view</span>All tools</a></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script>
+      function runAge(){
+        const d=new Date(document.getElementById('age-d').value);
+        if(isNaN(d))return;
+        const now=new Date();
+        let y=now.getFullYear()-d.getFullYear();
+        const m=now.getMonth()-d.getMonth();
+        if(m<0||(m===0&&now.getDate()<d.getDate()))y--;
+        const days=Math.floor((now-d)/86400000);
+        const el=document.getElementById('age-r');el.hidden=false;
+        el.innerHTML='<span class="big">'+y+' years</span><span class="meta">'+days.toLocaleString()+' days · '+(days*24).toLocaleString()+' hours</span>';
+      }</script>
+  <footer class="footer">
+    <div class="container">
+      <p>ToolHub © <span id="year"></span> · Free tools for everyone</p>
+      <p class="fine">All results are estimates for informational purposes only.</p>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
