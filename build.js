@@ -485,6 +485,12 @@ function pageShell({ title, metaDesc, canonical, body, schema }) {
 const outDir = path.join(__dirname, "public");
 fs.mkdirSync(outDir, { recursive: true });
 
+/* copy static assets (style.css lives next to build.js) */
+for (const asset of ["style.css"]) {
+  const src = path.join(__dirname, asset);
+  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(outDir, asset));
+}
+
 const bySlug = Object.fromEntries(TOOLS.map((t) => [t.slug, t]));
 
 /* --- tool cards (for hub) --- */
