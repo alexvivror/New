@@ -1,0 +1,14 @@
+{
+  "name": "usatools",
+  "version": "1.0.0",
+  "description": "Free online calculators, converters & generators — 100% client-side tools site.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["tools", "calculator", "bmi", "converter", "password-generator"],
+  "license": "MIT"
+}
