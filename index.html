@@ -3,100 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>USATools — Free Online Calculators, Converters & Generators</title>
-  <meta name="description" content="Free online tools: BMI calculator, percentage calculator, tip calculator, mortgage calculator, unit converter, password generator, word counter and more. Fast, private, works offline.">
-  <meta name="keywords" content="free tools, calculator, bmi calculator, percentage calculator, tip calculator, mortgage calculator, unit converter, password generator, word counter">
-  <meta property="og:title" content="USATools — Free Online Tools">
-  <meta property="og:description" content="Fast, private, ad-supported free tools for everyday needs.">
+  <title>ToolHub — Free Online Calculators & Converters</title>
+  <meta name="description" content="Free online tools: BMI calculator, percentage calculator, tip calculator, discount calculator, mortgage calculator, unit converter, password generator and more. Private, fast, no sign-up.">
+  <meta name="keywords" content="free tools, calculator, bmi calculator, percentage calculator, tip calculator, mortgage calculator, unit converter, password generator">
+  <meta property="og:title" content="ToolHub — Free Online Tools">
+  <meta property="og:description" content="Fast, private, free online calculators and converters.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
+
+  <header class="header">
     <div class="container header-inner">
-      <a href="#top" class="logo"><span class="material-symbols-outlined logo-icon">bolt</span><span>USATools</span></a>
-      <nav>
+      <a href="#" class="brand">
+        <span class="material-symbols-outlined">widgets</span>
+        <span>ToolHub</span>
+      </a>
+      <nav class="nav">
         <a href="#tools">Tools</a>
         <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
+  <main>
     <section class="hero">
       <div class="container">
-        <h1>Free Online Tools.<br>Fast. Private. No Sign-up.</h1>
-        <p class="sub">Calculators, converters & generators used by millions — built to run 100% in your browser. Nothing is uploaded. Ever.</p>
-        <div class="hero-stats">
-          <div class="stat"><b>24M+</b><span>calculator searches/mo</span></div>
-          <div class="stat"><b>60%+</b><span>mobile users</span></div>
-          <div class="stat"><b>0</b><span>data collected</span></div>
-        </div>
+        <p class="hero-tag">100% Free · No Sign-up · Private</p>
+        <h1>Everyday tools,<br><span>right in your browser.</span></h1>
+        <p class="hero-sub">Calculators, converters and generators that work instantly — your data never leaves your device.</p>
       </div>
     </section>
 
-    <!-- TOOL GRID -->
     <section class="tools" id="tools">
       <div class="container">
-        <h2 class="section-title">Popular Tools</h2>
-        <div class="grid">
-          <button class="tool-card" data-tool="bmi"><span class="material-symbols-outlined ico">monitor_weight</span><h3>BMI Calculator</h3><p>Body Mass Index in seconds</p></button>
-          <button class="tool-card" data-tool="percentage"><span class="material-symbols-outlined ico">percent</span><h3>Percentage Calculator</h3><p>% of, % change, % off</p></button>
-          <button class="tool-card" data-tool="tip"><span class="material-symbols-outlined ico">payments</span><h3>Tip Calculator</h3><p>Split bills & tips fairly</p></button>
-          <button class="tool-card" data-tool="discount"><span class="material-symbols-outlined ico">sell</span><h3>Discount Calculator</h3><p>Sale price & savings</p></button>
-          <button class="tool-card" data-tool="age"><span class="material-symbols-outlined ico">cake</span><h3>Age Calculator</h3><p>Exact age in days & hours</p></button>
-          <button class="tool-card" data-tool="mortgage"><span class="material-symbols-outlined ico">home</span><h3>Mortgage Calculator</h3><p>Monthly payment estimator</p></button>
-          <button class="tool-card" data-tool="unit"><span class="material-symbols-outlined ico">straighten</span><h3>Unit Converter</h3><p>Length, weight, volume, temp</p></button>
-          <button class="tool-card" data-tool="temp"><span class="material-symbols-outlined ico">device_thermostat</span><h3>Temperature Converter</h3><p>°F ↔ °C ↔ K</p></button>
-          <button class="tool-card" data-tool="password"><span class="material-symbols-outlined ico">lock</span><h3>Password Generator</h3><p>Strong random passwords</p></button>
-          <button class="tool-card" data-tool="words"><span class="material-symbols-outlined ico">notes</span><h3>Word Counter</h3><p>Words, chars, sentences</p></button>
-          <button class="tool-card" data-tool="loan"><span class="material-symbols-outlined ico">account_balance</span><h3>Loan Calculator</h3><p>Amortization & interest</p></button>
-          <button class="tool-card" data-tool="calorie"><span class="material-symbols-outlined ico">local_fire_department</span><h3>Calorie Needs</h3><p>Daily calories estimate</p></button>
-        </div>
+        <h2 class="section-title">All Tools</h2>
+        <div class="grid" id="tool-grid"></div>
       </div>
     </section>
 
-    <!-- ABOUT / SEO -->
     <section class="about" id="about">
       <div class="container">
-        <h2 class="section-title">Why USATools?</h2>
-        <div class="about-cols">
-          <div>
-            <h3>100% Private</h3>
-            <p>Every tool runs entirely in your browser with JavaScript. Your numbers never leave your device — no servers, no tracking, no accounts.</p>
+        <h2 class="section-title">Why ToolHub?</h2>
+        <div class="features">
+          <div class="feature">
+            <span class="material-symbols-outlined">shield</span>
+            <h3>Private by design</h3>
+            <p>All calculations run locally in your browser. Nothing is uploaded or stored.</p>
           </div>
-          <div>
-            <h3>Built for Mobile</h3>
-            <p>Over 60% of searches in the US happen on phones. Every tool here is mobile-first and loads in under a second.</p>
+          <div class="feature">
+            <span class="material-symbols-outlined">bolt</span>
+            <h3>Instant results</h3>
+            <p>No page loads, no waiting. Type and get answers immediately.</p>
           </div>
-          <div>
-            <h3>Works Offline</h3>
-            <p>Once loaded, all tools work with zero internet. Perfect for slow connections and private browsing.</p>
+          <div class="feature">
+            <span class="material-symbols-outlined">smartphone</span>
+            <h3>Mobile friendly</h3>
+            <p>Designed for phones first, works great on any screen size.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- TOOL MODAL -->
-  <div class="modal-backdrop" id="modal" hidden>
+  <footer class="footer" id="contact">
+    <div class="container">
+      <p>ToolHub © <span id="year"></span> · Free tools for everyone</p>
+      <p class="fine">All results are estimates for informational purposes only.</p>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal" hidden>
     <div class="modal">
-      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <button class="modal-close" id="modal-close" aria-label="Close">&#10005;</button>
       <div id="modal-body"></div>
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>USATools © <span id="year"></span> — Free online tools for everyone.</p>
-      <p class="tiny">All calculations are estimates and provided for informational purposes only. Not financial advice.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="script.js?v=20260805"></script>
 </body>
 </html>
