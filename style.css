@@ -66,20 +66,6 @@ nav a:hover { color: var(--accent2); }
 .stat b { display: block; font-size: 1.8rem; background: linear-gradient(90deg, var(--accent2), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .stat span { color: var(--muted); font-size: 0.85rem; }
 
-/* Ad slot */
-.ad-slot {
-  border: 1px dashed rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius);
-  background: var(--bg2);
-  color: var(--muted);
-  text-align: center;
-  padding: 28px;
-  margin: 20px 0 40px;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 /* Section titles */
 .section-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 28px; }
 
